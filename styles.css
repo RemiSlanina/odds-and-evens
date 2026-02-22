@@ -60,7 +60,6 @@ body {
   /* background-color: blue; */
   color: var(--text);
   text-align: center;
-  align-items: center;
   font-family: var(--font-text);
 }
 h1,
@@ -124,7 +123,7 @@ legend {
   background-color: #e7f294;
   background-color: var(--talk-back);
   min-width: 30vw;
-  border-radius: 1rem;
+  border-radius: 1.1rem;
   padding: 1.2rem;
   margin-top: 0.4rem;
   margin-bottom: 1.2rem;
@@ -153,6 +152,9 @@ button {
   border-color: var(--button-border);
   font-size: 2rem;
   cursor: pointer;
+}
+.invisible-button:disabled {
+  cursor: default;
 }
 button:hover {
   background-color: var(--button-hover);
@@ -207,6 +209,18 @@ button:focus {
   border: none !important;
   outline: none !important;
 }
+
+/* Try this later:
+ all: unset;  Resets everything  */
+/* .invisible-button {
+  all: unset;  
+  cursor: not-allowed;
+}
+.inactive-button {
+  background-color: hsl(0, 0%, 80%);
+  border: none;
+  cursor: not-allowed;
+} */
 
 .number-system-container {
   display: flex;

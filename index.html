@@ -46,7 +46,7 @@
           1
         </button>
 
-        <button class="invisible-button play-button" role="p">or</button>
+        <button class="invisible-button play-button" disabled>or</button>
 
         <button
           id="player-picks-even"
@@ -56,24 +56,24 @@
           10
         </button>
 
-        <button class="invisible-button play-button" role="p">+</button>
+        <button class="invisible-button play-button" disabled>+</button>
 
         <button
           id="computer-choice"
           class="play-button not-clickable"
-          role="p"
+          disabled
           title="Make a bet, then pick a number and wait for the computer to choose one, too."
         >
           ?
         </button>
 
-        <button class="invisible-button play-button" role="p">=</button>
+        <button class="invisible-button play-button" disabled>=</button>
 
         <button
           id="result"
           class="play-button not-clickable"
-          role="p"
           title="Here the result will be displayed."
+          disabled
         >
           ?
         </button>
@@ -81,12 +81,14 @@
       <div class="number-system-container">
         <button
           id="switch-to-binary"
+          aria-label="Switch to binary notation"
           title="Click here to switch to binary notation."
         >
           binary
         </button>
         <button
           id="switch-to-decimal"
+          aria-label="Switch to decimal notation"
           title="Click here to switch to decimal notation."
         >
           decimal
