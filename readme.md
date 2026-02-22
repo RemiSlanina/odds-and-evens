@@ -4,9 +4,9 @@ Small web app/browser game
 
 ## Screenshots:
 
-![Screenshot 1](./assets/screenshots/screenshot-1.jpg)
-![Screenshot 2](./assets/screenshots/screenshot-2.jpg)
-![Screenshot 3](./assets/screenshots/screenshot-3.jpg)
+[![Screenshot 1](./assets/screenshots/screenshot-1.jpg)](https://test-sandy-one-88.vercel.app)]
+[![Screenshot 2](./assets/screenshots/screenshot-2.jpg)](https://test-sandy-one-88.vercel.app)
+[![Screenshot 3](./assets/screenshots/screenshot-3.jpg)](https://test-sandy-one-88.vercel.app)
 
 A **minimalist number-guessing game** where players bet on odd/even outcomes and pick numbers. Features:
 
@@ -21,4 +21,6 @@ A **minimalist number-guessing game** where players bet on odd/even outcomes and
 - State management with vanilla JS
 - User feedback and edge-case handling
 
-Thank you for visiting !
+**Visit the project @**
+
+[Odds and Evens](https://test-sandy-one-88.vercel.app)
