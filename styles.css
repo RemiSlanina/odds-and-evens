@@ -1,10 +1,55 @@
+/* *************** @font-face *************** */
+@font-face {
+  /* Dosis */
+  font-family: "Dosis";
+  src:
+    url("./fonts/Dosis-VariableFont_wght.woff2") format("woff2"),
+    url("./fonts/Dosis-VariableFont_wght.ttf") format("ttf");
+  font-weight: 200-800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  /* Libre Franklin */
+  font-family: "Libre Franklin";
+  src:
+    url("./fonts/LibreFranklin-VariableFont_wght.woff2") format("woff2"),
+    url("./fonts/LibreFranklin-VariableFont_wght.ttf") format("ttf");
+  font-weight: 100-900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  /* Libre Franklin italics*/
+  font-family: "Libre Franklin";
+  src:
+    url("./fonts/LibreFranklin-Italic-VariableFont_wght.woff2") format("woff2"),
+    url("./fonts/LibreFranklin-Italic-VariableFont_wght.ttf") format("ttf");
+  font-weight: 100-900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* *************** global variables *************** */
 :root {
-  --bg: #fbf2ed;
-  --text: #515253;
-  --accent: #e8d4c6;
-  --accent-2: #ffe2c3;
-  --button-hover: #fbf2ed;
-  --talk-back: #fbf2ed;
+  --bg: #f9f4f0;
+  --text: #2a2a2a;
+  --accent: #d8c8b8;
+  --accent-2: #d59c76;
+  --button: #c8b8a8;
+  --button-border: #a89888;
+  --button-hover: #e0d0c0;
+  --button-border-hover: #d8c8b8;
+  --button-focus: #708ea4;
+  --button-focus-2: #cfc2b0;
+  --button-focus-3: #1c294f;
+  --talk-back: #f9f4f0;
+
+  --font-header: "Dosis", "Arial", sans-serif;
+  --font-text: "Libre Franklin", "Helvetica", sans-serif;
+
+  /* --font-header: serif;
+  --font-text: serif; */
 }
 
 /*  * {
@@ -16,18 +61,31 @@ body {
   color: var(--text);
   text-align: center;
   align-items: center;
-  font-family: Dosis, "Libre Franklin", sans-serif;
+  font-family: var(--font-text);
+}
+h1,
+h2,
+h3 {
+  font-family: var(--font-header);
 }
 h1 {
+  font-size: 5rem;
   margin: 0.8rem;
 }
 p {
+  font-family: var(--font-text);
   margin: 0.24rem;
 }
 #game {
-  width: 100dvw;
-  height: 100dvh;
+  width: 100vw;
+  height: 100vh;
 }
+em,
+i {
+  font-family: var(--font-text);
+  font-style: italic;
+}
+
 #full-game-screen {
   display: flex;
   flex-direction: column;
@@ -45,6 +103,7 @@ legend {
 #button-container {
   display: flex;
   flex-direction: row;
+  gap: 0.6rem;
   margin: 0.4rem;
 }
 .bet-options {
@@ -56,7 +115,7 @@ legend {
   /* background-color: red; */
 }
 #talk-back-display-container {
-  min-height: 2dvh;
+  min-height: 2vh;
   display: flex;
   justify-content: center;
   /* background-color: blue; */
@@ -64,7 +123,7 @@ legend {
 #talk-back-display {
   background-color: #e7f294;
   background-color: var(--talk-back);
-  min-width: 30dvw;
+  min-width: 30vw;
   border-radius: 1rem;
   padding: 1.2rem;
   margin-top: 0.4rem;
@@ -75,7 +134,7 @@ h2 {
   font-weight: 400;
 }
 #game-container {
-  min-height: 20dvh;
+  min-height: 20vh;
   display: flex;
   justify-content: center;
   font-size: 3rem;
@@ -85,49 +144,85 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--accent);
+  background-color: var(--button);
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+  /* background-color: blue; */
   padding: 1rem 2rem 1rem 2rem;
   border-radius: 1rem;
+  border-width: 0.2rem;
+  border-color: var(--button-border);
   font-size: 2rem;
+  cursor: pointer;
 }
 button:hover {
   background-color: var(--button-hover);
+  border-color: var(--button-border-hover);
+  /* background-color: blue; */
+}
+/* only show buttons when navigating with keyboard */
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+button:focus {
+  outline: 0.3rem solid var(--button-focus-3);
+  /* outline: 2px solid lime; */
+  outline-offset: 0.1rem; /* outline so it is less ugly */
+}
+
+.invisible-button,
+.inactive-button {
+  cursor: not-allowed;
 }
 .invisible-button {
-  background-color: transparent;
   background-color: white;
-  background-color: #fafafa33;
-  background-color: hsla(0, 0%, 98%, 0.2);
-  border: solid hsla(0, 0%, 50%, 0.1);
-}
-.invisible-button:hover {
   background-color: transparent;
-  background-color: hsla(0, 0%, 98%, 0.2);
+  border: none;
 }
 .play-button {
-  padding: 1dvw 1dvh;
+  padding: 1vw 1vh;
   height: 6rem;
   width: 8rem;
 }
-.not-clickable:hover {
-  background-color: var(--accent);
-}
+/* .not-clickable:hover {
+  background-color: transparent !important;
+} */
 .inactive-button,
-.inactive-button:link,
 .inactive-button:hover {
   background-color: gray;
-  background-color: hsla(0, 0%, 50%, 0.5);
+  background-color: hsl(0, 0%, 80%);
+  border-color: hsl(0, 0%, 80%);
 }
+
+.invisible-button:hover,
+.invisible-button:focus {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+}
+.inactive-button:hover,
+.inactive-button:focus {
+  background-color: hsl(0, 0%, 80%) !important;
+  border-color: hsl(0, 0%, 80%) !important;
+  border: none !important;
+  outline: none !important;
+}
+
 .number-system-container {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  gap: 0.6rem;
   padding: 1.6rem;
 }
 
 @media screen and (max-width: 992px) {
+  h1 {
+    font-size: 4rem;
+  }
   #game-container {
     flex-direction: row;
+    gap: 0.1rem;
     font-size: 2rem;
   }
 
@@ -138,22 +233,24 @@ button:hover {
   }
 }
 @media screen and (max-width: 720px) {
+  h1 {
+    font-size: 2.5rem;
+  }
   #game-container {
     font-size: 1rem;
     flex-direction: column;
   }
   button {
-    background-color: var(--accent);
     padding: 0.77rem 1.2rem 0.77rem 1.2rem;
     border-radius: 0.77rem;
     font-size: 1.2rem;
   }
   .play-button {
-    padding: 5dvw 10dvh;
+    padding: 2rem 7rem;
   }
 }
 @media screen and (max-width: 400px) {
   .play-button {
-    padding: 2dvw 4dvh;
+    padding: 1rem 5rem;
   }
 }
